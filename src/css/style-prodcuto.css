@@ -1,0 +1,124 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: sans-serif;
+}
+.encabezado {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.logo{
+    width: 80px;
+    height: auto;
+    display: block;
+    justify-content: start;
+    padding: 10px;
+    margin-left: 50px;
+}
+
+.navegacion {
+    border: 1px solid black;
+
+}
+
+.navegacion-lista{
+    display: flex;
+    border: 1px solid black;
+    list-style: none;
+    padding: 10px;
+    gap: 5px;
+}
+
+.navegacion-lista li {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+
+main{
+    display: flex; /*No va a hacer nada porque solo hay un div dentro*/
+    justify-content: center;
+    background: linear-gradient(180deg, #d3998f , #A0522D);
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.contenedor-producto{
+    padding: 50px;
+    /* border: 1px solid black; */
+    display: flex;  
+    width: 95%;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.imagen-producto {
+    /* border: 1px solid rgb(255, 9, 9); */
+    width: 70%;
+    box-shadow: 0px 4px 15px rgba(49, 49, 49, 0.3);
+    border-radius: 10px;
+}
+
+img{
+    width: 100%;
+    /* box-shadow: 0px 4px 15px rgba(0,0,0,0.3); */
+    filter: box-shadow(0px 5px 5px rgba(0,0,0,0.5));
+    height: auto;
+}
+
+
+.producto{
+    /* border: 1px solid black; */
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    height: auto;
+    justify-content: space-around;
+}
+
+.nombre-producto{
+    font-size: 2em;
+    padding-top: 20px;
+}
+
+.descripcion-producto{
+    font-size: 1.5em;
+
+}
+
+.precio{
+    font-size: 2em;
+    padding-top: 30px;
+}
+
+#carrito{
+    border: 1px solid black;
+}
+
+.caracteristicas-prodcuto{
+    /* border: 1px solid black; */
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+    width: 93%;
+    display: flex;
+    justify-content: space-around;
+} */
+
+.descripcion-texto{
+    width: 40%;
+}
+
+
+.pie-de-pagina{
+    border: 1px solid black;
+}
