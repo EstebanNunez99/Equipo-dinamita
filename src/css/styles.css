@@ -21,38 +21,15 @@ body{
 
 /* HERO */
 .hero {
-  padding: 4rem 0;
-  text-align: center;
+
+  padding-top: 8rem;
   background-color: #F5E6D3;
+  height: 100vh;
 }
-
-.hero h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  color: #A0522D;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-}
-
-
 a{
     text-decoration: none;
     color: inherit;        
 }
-
-main{
-    margin: auto;
-
-}
-
-section{
-    display: flex;
-    flex-direction: column;
-}
-
 .productos img{
     display: flex;
     width: 300px;
