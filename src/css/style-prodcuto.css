@@ -12,6 +12,7 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color:#F5E6D3;
 
 }
 .logo{
@@ -45,7 +46,7 @@ body{
 main{
     display: flex; /*No va a hacer nada porque solo hay un div dentro*/
     justify-content: center;
-    background: linear-gradient(180deg, #d3998f , #A0522D);
+
     flex-direction: column;
     align-items: center;
 }
@@ -54,15 +55,17 @@ main{
 .contenedor-producto{
     padding: 50px;
     /* border: 1px solid black; */
+    background: linear-gradient(0deg, #da8d69 , #A0522D);
     display: flex;  
-    width: 95%;
+    width: 100%;
     justify-content: space-between;
     gap: 20px;
+    height: auto;
 }
 
 .imagen-producto {
     /* border: 1px solid rgb(255, 9, 9); */
-    width: 70%;
+    width: 60%;
     box-shadow: 0px 4px 15px rgba(49, 49, 49, 0.3);
     border-radius: 10px;
 }
@@ -81,42 +84,72 @@ img{
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* justify-content: space-around; */ /*Pone muy separados los elementos uso gap*/
+    gap: 60px;
     box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
     border-radius: 10px;
     height: auto;
-    justify-content: space-around;
+    color:#F5E6D3;
 }
+
 
 .nombre-producto{
     font-size: 2em;
-    padding-top: 20px;
 }
 
 .descripcion-producto{
     font-size: 1.5em;
+}
 
+.nombre-y-descripcion{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 85%;
+    /* border: 1px solid black; */
+    height:auto;
+    gap:20px;
+    padding-top: 40px;
 }
 
 .precio{
-    font-size: 2em;
-    padding-top: 30px;
+    font-size: 3em;
 }
 
-#carrito{
-    border: 1px solid black;
+.carrito {
+    cursor: pointer;
+}
+
+.precio-y-carrito{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.opciones-pago {
+    font-size: 0.9em;
+    color: #ffe7c6;
+    text-decoration: underline;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-left: 7%;
+}
+.descripcion-texto{
+    width: 85%;
+    font-size: 1.5rem;
+
 }
 
 .caracteristicas-prodcuto{
     /* border: 1px solid black; */
     box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
-    width: 93%;
+    width: 100%;
     display: flex;
     justify-content: space-around;
-} */
-
-.descripcion-texto{
-    width: 40%;
+    background-color:#A0522D;
+    
 }
+
+
 
 
 .pie-de-pagina{
