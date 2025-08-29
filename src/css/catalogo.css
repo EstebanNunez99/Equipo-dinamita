@@ -4,6 +4,13 @@
     min-height: 100vh;
 }
 
+header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #F5E6D3;
+}
+
 .titulo-catalogo{
     font-family: 'Playfair Display', serif;
     font-size: 3rem;
