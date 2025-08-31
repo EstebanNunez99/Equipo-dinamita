@@ -267,6 +267,14 @@ img{
     font-size: 1.3em;
 }
 
+.caracteristicas-prodcuto caption {
+    margin: 10px;
+} /* agregado */
+
+#opciones-de-pago {
+    margin-top: 20px;
+} /* agregado */
+
 
 .caracteristicas-prodcuto thead th {
     background-color: #f5e2cc; 
