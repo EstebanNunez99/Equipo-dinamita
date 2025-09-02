@@ -24,7 +24,9 @@
       <div class="header-right">
         <div class="search">
           <img src="../img/search.svg" alt="search" />
-          <input type="text" placeholder="Buscar productos" />
+          <input type="text" placeholder="Buscar productos" id="buscarProductos" />
+          <div id="resultadosBusqueda" class="resultados-container"></div>
+
         </div>
         <img src="../img/carrito.svg" alt="Cart" class="carrito" />
       </div>
@@ -61,28 +63,8 @@
     <span>POPULAR</span>
     <h2>Productos Destacados</h2>
   </div>
-  <div class="productos-grid">
-    <div class="producto-card">
-      <img src="../img/Mesa Comedor Pampa.png" alt="Mesa Comedor Pampa" />
-      <div class="producto-info">
-        <span class="producto-nombre">Mesa Comedor Pampa</span>
-        <span class="producto-precio">$25.00</span>
-      </div>
-    </div>
-    <div class="producto-card">
-      <img src="../img/Silla de Trabajo Belgrano.png" alt="Silla de Trabajo Belgrano" />
-      <div class="producto-info">
-        <span class="producto-nombre">Silla de Trabajo Belgrano</span>
-        <span class="producto-precio">$12.00</span>
-      </div>
-    </div>
-    <div class="producto-card">
-      <img src="../img/Sofá Patagonia.png" alt="Sofá Patagonia" />
-      <div class="producto-info">
-        <span class="producto-nombre">Sofá Patagonia</span>
-        <span class="producto-precio">$65.00</span>
-      </div>
-    </div>
+  <div id="productosGrid" class="productos-grid">
+    <!-- Los productos se cargarán aquí dinámicamente -->
     
   </div>
 </section>
@@ -133,5 +115,7 @@
         </p>
       </div>
     </footer>
+
+    <script src="../js/index.js"></script>
   </body>
 </html>

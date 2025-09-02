@@ -8,7 +8,7 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100px; /* Ajusta según tu diseño */
+    height: 90px; /* Ajusta según tu diseño */
     z-index: 1000; /* Asegura que esté por encima del contenido */
 }
 
@@ -73,3 +73,4 @@ ul{
     padding: 10px;
     margin-left: 50px;
 }
+
