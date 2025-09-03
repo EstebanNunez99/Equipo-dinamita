@@ -4,33 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HERMANOS JOTA</title>
-    <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="stylesheet" href="../css/headerStyles.css" />
-    <link rel="stylesheet" href="../css/footer.css" />
-    <link rel="stylesheet" href="../css/Presentacion.css" />
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/headerStyles.css">  
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/catalogo.css">
+    <link rel="stylesheet" href="../css/Presentacion.css">
+
+    <link rel="shortcut icon" href="../img/logo.svg" type="image/x-icon">
+
   </head>
   <body>
     <header>
-      <div class="header-left">
-        <img src="../img/logo.svg" alt="Hermanos Jota" class="logo" />
-        <nav>
-          <ul>
-            <li>Inicio</li>
-            <li>Catálogo</li>
-            <li>Contacto</li>
-          </ul>
-        </nav>
-      </div>
-      <div class="header-right">
-        <div class="search">
-          <img src="../img/search.svg" alt="search" />
-          <input type="text" placeholder="Buscar productos" id="buscarProductos" />
-          <div id="resultadosBusqueda" class="resultados-container"></div>
-
-        </div>
-        <img src="../img/carrito.svg" alt="Cart" class="carrito" />
-      </div>
-    </header>
+            <div class="header-left">
+                <img src="../img/logo.svg" alt="Hermanos Jota" class="logo">
+                <nav>
+                    <ul>
+                        <li><a href="index.html" class="active">Inicio</a></li>
+                        <li><a href="catalogo.html">Catálogo</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-right">
+                <div class="search">
+                    <img src="../img/search.svg" alt="search">
+                    <input type="text" placeholder="Buscar productos">
+                </div class= "carrito">
+                <img src="../img/carrito.svg" alt="Carrito" class="carrito">
+                <span class="cart-count">1</span>
+                </div>
+        </header>
 
     <main>
       <!-- HERO -->
@@ -116,6 +120,6 @@
       </div>
     </footer>
 
-    <script src="../js/index.js"></script>
+    <!-- <script src="../js/index.js"></script> lo saco un toque Para arreglar unas cositas--> 
   </body>
 </html>
