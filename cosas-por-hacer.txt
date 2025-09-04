@@ -1,0 +1,51 @@
+
+
+>>>>>>>>>>>>>>>>>>>> Estilos <<<<<<<<<<<<<<<<<<<<
+Index: 
+1 - Agregar imagen principal y el logo 
+2 - No debe tener el campo de busqueda
+
+------
+Catálogo.
+1 - Visualmente nada: Cargar los productos desde JS
+
+-----
+Producto:
+1 - Visualmente nada: Solo la funcionalidad del carrito
+
+-----
+Contacto: 
+1 - Ajustar los estilos
+
+----------------------------------------------------------------------------------
+
+>>>>>>>>>>>>>>>>>>>>  Funcionales  <<<<<<<<<<<<<<<<<<<<<<<
+
+Index: 
+
+------
+Catálogo.
+1 - Visualmente nada: Cargar los productos desde JS
+
+-----
+Producto:
+1 - Visualmente nada: Solo la funcionalidad del carrito
+
+-----
+Contacto: 
+1 - Ajustar los estilos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
