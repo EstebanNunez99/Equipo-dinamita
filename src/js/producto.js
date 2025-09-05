@@ -42,7 +42,8 @@ const precio = document.querySelector(".precio");
 const descripcionTexto = document.querySelector(".descripcion-texto p");
 const caracteristicasTds = document.querySelectorAll(".caracteristicas-prodcuto tbody tr td");
 
-const idProducto = 7;
+const params = new URLSearchParams(window.location.search); // lleva al producto que el cual seleccionamos en el catalogo
+const idProducto = parseInt(params.get("id")); // lleva al producto que el cual seleccionamos en el catalogo 
 
 
 async function cargarProducto() {
@@ -79,12 +80,48 @@ async function cargarProducto() {
         precio.textContent = "$ " + producto.precio || ""
 
         //Verificar los encabezados, no todos tienen las mismas caracteristicas
-        caracteristicasTds[1].textContent = producto.medidas || "";
-        caracteristicasTds[2].textContent = producto.materiales || producto.estructura || "";
-        caracteristicasTds[3].textContent = producto.acabado || "";
-        caracteristicasTds[4].textContent = producto.peso || producto.carga_maxima || "";
-        caracteristicasTds[5].textContent = producto.capacidad || producto.incluye || producto.apilables || "";
-    
+        //agregado 
+            const contenedorTabla = document.querySelector(".caracteristicas-prodcuto");
+    contenedorTabla.innerHTML = ""; // Limpiamos el contenido
+
+    const caracteristicasAExcluir = [
+      "id",
+      "nombre",
+      "descripcion",
+      "imagen",
+      "precio",
+    ];
+    const caracteristicas = Object.keys(producto).filter(
+      (key) => !caracteristicasAExcluir.includes(key)
+    );
+
+    const tablaHTML = `
+      <table>
+          <caption>Características del producto</caption>
+          <thead>
+              <tr>
+                  ${caracteristicas
+                    .map(
+                      (key) =>
+                        `<th>${key
+                          .replace(/_/g, " ")
+                          .replace(/\b\w/g, (c) => c.toUpperCase())}</th>`
+                    )
+                    .join("")}
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  ${caracteristicas
+                    .map((key) => `<td>${producto[key]}</td>`)
+                    .join("")}
+              </tr>
+          </tbody>
+      </table>
+    `;
+    contenedorTabla.innerHTML = tablaHTML;
+
+        //final 
 
       } catch (err) {
         console.error("Error al cargar productos:", err);

@@ -1,0 +1,50 @@
+Opción 2 de la tabla 
+
+    // --- Versión simplificada para la tabla ---
+    const contenedorTabla = document.querySelector(".caracteristicas-prodcuto");
+    
+    // Primero, limpiamos el contenido del contenedor
+    contenedorTabla.innerHTML = "";
+
+    // Creamos la estructura básica de la tabla
+    const tabla = document.createElement("table");
+    const tbody = document.createElement("tbody");
+
+    // Recorremos cada propiedad del objeto 'producto'
+    for (const clave in producto) {
+      // Excluimos las propiedades que no son características
+      if (
+        clave === "id" ||
+        clave === "nombre" ||
+        clave === "descripcion" ||
+        clave === "imagen" ||
+        clave === "precio"
+      ) {
+        continue; // Pasamos a la siguiente propiedad
+      }
+
+      // Creamos una nueva fila (tr) y dos celdas (td)
+      const fila = document.createElement("tr");
+      const celdaNombre = document.createElement("td");
+      const celdaValor = document.createElement("td");
+
+      // Rellenamos las celdas
+      celdaNombre.textContent = clave.replace(/_/g, " ") + ":";
+      celdaValor.textContent = producto[clave];
+
+      // Agregamos las celdas a la fila
+      fila.appendChild(celdaNombre);
+      fila.appendChild(celdaValor);
+
+      // Agregamos la fila al cuerpo de la tabla
+      tbody.appendChild(fila);
+    }
+
+    // Agregamos el cuerpo de la tabla y el título a la tabla
+    tabla.appendChild(tbody);
+    const titulo = document.createElement("caption");
+    titulo.textContent = "Características del producto";
+    tabla.appendChild(titulo);
+
+    // Finalmente, agregamos la tabla completa al contenedor principal
+    contenedorTabla.appendChild(tabla);
