@@ -4,10 +4,7 @@ body {
   margin: 0;
   padding: 0;
   background: #F5E6D3;
-<<<<<<< HEAD
   line-height: 1.6;
-=======
->>>>>>> 941abaf39a8b96a875b3933112cbc0002374581a
 }
 
 /* Caja principal */
@@ -18,7 +15,6 @@ main {
   margin-top: 100px;
 }
 
-<<<<<<< HEAD
 form { 
    display: flex;
    flex-direction: column; 
@@ -27,9 +23,6 @@ form {
    max-width: 700px;
    
 }
-=======
-form { display: flex; flex-direction: column; gap: 10px; }
->>>>>>> 941abaf39a8b96a875b3933112cbc0002374581a
 /* Titulo principal */
 h1 {
   font-family: 'Playfair Display', Georgia, serif; /* tipografia secundaria */
@@ -45,35 +38,22 @@ label {
   text-align: left;
   margin-bottom: 2px;
   font-weight: 500; /* Inter Medium */
-<<<<<<< HEAD
   font-size: 14px;
-=======
-  font-size: 16px;
->>>>>>> 941abaf39a8b96a875b3933112cbc0002374581a
   padding-left: 5px;
 }
 
 /* Inputs */
 input, textarea {
   width: 100%;
-<<<<<<< HEAD
   padding: 14px;
   margin-bottom: 15px;
   font-size: 15px; /* Inter Regular */
   color: #A0522D;
-=======
-  padding: 12px;
-  margin-bottom: 15px;
-  font-size: 15px; /* Inter Regular */
->>>>>>> 941abaf39a8b96a875b3933112cbc0002374581a
   border: 1px solid #A0522D;
   border-radius: 10px;
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
-<<<<<<< HEAD
   letter-spacing: 0.5px;
-=======
->>>>>>> 941abaf39a8b96a875b3933112cbc0002374581a
 }
 
 textarea {
@@ -87,7 +67,6 @@ button {
   padding: 12px;
   background: #C47A6D;
   border: none;
-<<<<<<< HEAD
   color: #ffffff;
   font-family: 'Inter', sans-serif;
   font-weight: 500; /* Inter Medium */
@@ -98,22 +77,11 @@ button {
   letter-spacing: 0.08em;
   margin: 0 auto; /* 🔹 Esto lo centra */
   display: block; /* Necesario para que funcione el centrado */
-=======
-  color: white;
-  font-family: 'Inter', sans-serif;
-  font-weight: 300; /* Inter Medium */
-  font-size: 14px;
-  border-radius: 5px;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
->>>>>>> 941abaf39a8b96a875b3933112cbc0002374581a
 }
 
 button:hover {
   background-color: #D4A437;
 }
-<<<<<<< HEAD
 /* Navegación */
 nav ul {
   list-style: none;
@@ -143,20 +111,13 @@ nav ul li a.active {
   border-bottom: 2px solid #6b3e2e;
 }
 
-=======
->>>>>>> 941abaf39a8b96a875b3933112cbc0002374581a
 
 /* Mensaje de exito */
 #successMessage {
   color: #40a827;
   font-weight: 700;
   font-size: 14px;
-<<<<<<< HEAD
   margin-top: 15px;
   font-family: 'Inter', sans-serif;
   text-align: center;
-=======
-  margin-top: 10px;
-  font-family: 'Inter', sans-serif;
->>>>>>> 941abaf39a8b96a875b3933112cbc0002374581a
 }
