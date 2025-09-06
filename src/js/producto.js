@@ -72,6 +72,9 @@ async function cargarProducto() {
 
     //Verificar los encabezados, no todos tienen las mismas caracteristicas
     //agregado
+
+//Cambios hechos por maxi
+
     const contenedorTabla = document.querySelector(".caracteristicas-prodcuto");
     contenedorTabla.innerHTML = ""; // Limpiamos el contenido
 
