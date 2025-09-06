@@ -41,8 +41,9 @@ const descripcion= document.querySelector(".descripcion-producto");
 const precio = document.querySelector(".precio");
 const descripcionTexto = document.querySelector(".descripcion-texto p");
 const caracteristicasTds = document.querySelectorAll(".caracteristicas-prodcuto tbody tr td");
+const caracteristicasThs = document.querySelectorAll(".caracteristicas-prodcuto thead tr th");
 
-const idProducto = 8;
+const idProducto = 1;
 
 
 async function cargarProducto() {
@@ -53,10 +54,9 @@ async function cargarProducto() {
         if (!respuesta.ok) throw new Error(`HTTP ${respuesta.status}`);
 
         
-        const productos = await respuesta.json(); // convierto el json a array de objetos
-
+        const productos = await respuesta.json(); // convierto el json a array de objetos que se llama productos
         
-        const producto = productos.find(p => p.id === idProducto); // busco el producto
+        const producto = productos.find(p => p.id === idProducto); // busco con find el producto en el arrelo de productos
 
         
         if (!producto) { // si no existe, mostramos mensaje y salimos
@@ -64,26 +64,27 @@ async function cargarProducto() {
           return;
         }
 
-        
-        nombrePagina.textContent = "Producto | " + producto.nombre
-
-
+        //cargo la parte del contenedor del producto
+        nombrePagina.textContent = "Producto | " + producto.nombre // le pongo nombresito a la pag :D
         imagenDelProducto.src = encodeURI(producto.imagen); // cargo la imagen
         imagenDelProducto.alt = producto.nombre || "Producto";
-
-
         nombre.textContent = producto.nombre || "";
         descripcion.textContent = producto.descripcion || "";
         descripcionTexto.textContent = producto.descripcion || "";
-
         precio.textContent = "$ " + producto.precio || ""
+        
+        // console.log(producto)
+
 
         //Verificar los encabezados, no todos tienen las mismas caracteristicas
-        caracteristicasTds[1].textContent = producto.medidas || "";
-        caracteristicasTds[2].textContent = producto.materiales || producto.estructura || "";
-        caracteristicasTds[3].textContent = producto.acabado || "";
-        caracteristicasTds[4].textContent = producto.peso || producto.carga_maxima || "";
-        caracteristicasTds[5].textContent = producto.capacidad || producto.incluye || producto.apilables || "";
+
+
+        // console.log(producto)
+        // caracteristicasTds[1].textContent = producto.medidas || "";
+        // caracteristicasTds[2].textContent = producto.materiales || producto.estructura || "";
+        // caracteristicasTds[3].textContent = producto.acabado || "";
+        // caracteristicasTds[4].textContent = producto.peso || producto.carga_maxima || "";
+        // caracteristicasTds[5].textContent = producto.capacidad || producto.incluye || producto.apilables || "";
     
 
       } catch (err) {
@@ -97,3 +98,5 @@ async function cargarProducto() {
 
     // ejecutamos la función
     cargarProducto();
+
+
