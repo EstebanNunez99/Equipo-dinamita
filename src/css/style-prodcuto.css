@@ -3,7 +3,7 @@
     padding: 0;
     margin: 0;
 }
-
+/*
 body{
     font-family: sans-serif;
 }
@@ -22,7 +22,7 @@ header {
 .header-left {
     display: flex;
     align-items: center;
-    gap: 30px; /* Espacio entre logo y nav */
+    gap: 30px; 
 }
 
 nav{
@@ -54,7 +54,11 @@ ul{
     justify-content: start;
     padding: 10px;
     margin-left: 50px;
-}
+} Reeeeeeeeeevisar esta parte, creo q no está haciendo nada */ 
+
+
+
+
 
 /* .encabezado {
     display: flex;
@@ -96,7 +100,7 @@ main{
     background-color: #F5E6D3;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 0px 10px 10px 10px;
     gap: 10px;
 }
 
@@ -110,7 +114,7 @@ main{
     justify-content: space-between;
     gap: 20px;
     height: auto;
-    margin-top: 50px; /*puse este para que el header no tape el contenido*/
+    /*argin-top: 50px; puse este para que el header no tape el contenido*/
 }
 
 .imagen-producto {
@@ -118,7 +122,8 @@ main{
     width: 60%;
     box-shadow: 0px 4px 15px rgba(49, 49, 49, 0.3);
     border-radius: 10px;
-    background: linear-gradient(0deg, #da8d69 , #A0522D); 
+    background: linear-gradient(180deg,#C47A6D, #d4978e);
+    /* background: linear-gradient(0deg, #da8d69 , #A0522D);  */
 }
 
 img{
@@ -135,7 +140,9 @@ img{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(0deg, #da8d69 , #A0522D); 
+
+    background: linear-gradient(180deg,#C47A6D, #d4978e);
+    /* background: linear-gradient(0deg, #da8d69 , #A0522D);  */
     /* justify-content: space-around; */ /*Pone muy separados los elementos uso gap*/
     gap: 60px;
     box-shadow: 0px 4px 15px rgba(49, 49, 49, 0.3);
@@ -147,6 +154,8 @@ img{
 
 .nombre-producto{
     font-size: 2em;
+    font-family: 'Playfair Display', serif;
+    /* color:#A0522D; No queda tan bien en este caso*/
 }
 
 .descripcion-producto{
@@ -227,6 +236,10 @@ img{
     justify-content: space-around;
     width: 100%;
 } */
+
+
+
+
 .opciones-pago {
     font-size: 0.9em;
     color: #ffe7c6;
@@ -236,10 +249,15 @@ img{
     margin-left: 7%;
 }
 .descripcion-texto{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     width: 85%;
     font-size: 1.5rem;
+    padding-bottom: 20px;
 
 }
+
 
 .caracteristicas-prodcuto{
     /* border: 1px solid black; */
@@ -248,17 +266,11 @@ img{
     display: flex;
     justify-content: space-around;
     /* background-color:#A0522D; */
-    background: linear-gradient(170deg, #da8d69 , #A0522D); 
+    background: linear-gradient(85deg,#C47A6D, #d4978e);
+    /* background: linear-gradient(170deg, #da8d69 , #A0522D);  */
     border-radius: 10px;
     color: #ffffff;
 }
-
-
-
-
-
-
-
 
 .caracteristicas-prodcuto table {
     width: 100%;
