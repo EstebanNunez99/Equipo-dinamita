@@ -1,54 +1,79 @@
-const gridProducto = document.querySelector(".grid-productos"); // ahora ya lo creamos acá asi que no hace falta traerlo del html
+const gridProducto = document.querySelector(".grid-productos"); // este es el div donde van a ir todos los productos
 
-async function cargarTodosLosProductos() {
-  try {
-    const respuesta = await fetch("../json/catalogo_hermanos_jota.json"); // trgo el archivo JSON
-    if (!respuesta.ok) throw new Error(`HTTP ${respuesta.status}`);
+let productos = []; //  aca voy a guardar todos los productos del json pa despues usarlos en la busqueda
 
-    const productos = await respuesta.json(); // convierto el json a array de objetos que se llama productos
+//  esta funcion agarra una lista de productos y los renderixa en el html
+function renderizarProductos(lista) {
+  gridProducto.innerHTML = ""; // limpio todo antes de volver a cargar
 
-    for (const prodcuto of productos) { //itero sobre todos los productos y voy cargando al html y lo renderizo
-      
-      const cardProducto = document.createElement("div"); // esto lo que hace es crear un div en el html, este div es el que va a contener despues la imagen, y el otro div (el divsito)
-      cardProducto.className = "card-producto"; //le pongo el atributo class
+  if (lista.length === 0) {
+    gridProducto.innerHTML = "<p>No se encontraron productos.</p>"; // si no hay nada q mostrar muestro msjito
+    return;
+  }
 
-      const imgProducto = document.createElement("img"); // creo la iamgen en el html
-      imgProducto.src = prodcuto.imagen; //le paso la url de la imagen
-      imgProducto.alt = prodcuto.nombre; //
+  for (const prodcuto of lista) { // recorro cada producto del array
+    const cardProducto = document.createElement("div"); // creo el div principal (la tarjetita)
+    cardProducto.className = "card-producto";
 
-      const bodyProducto = document.createElement("div"); //este el el divsito, que va a contener el nombre y una breve descripcion del producto
-      bodyProducto.className = "card-body"; //le pongo el atributo class
+    const imgProducto = document.createElement("img"); // creo la imagen
+    imgProducto.src = prodcuto.imagen; // le pongo la url de la img q viene del json
+    imgProducto.alt = prodcuto.nombre; // alt por accesibilidad
 
-      const tituloProducto = document.createElement("h2"); //creo un h2
-      tituloProducto.textContent = prodcuto.nombre; // le asigno al h2 el nombre del producto
+    const bodyProducto = document.createElement("div"); // div de adentro de la tarjeta
+    bodyProducto.className = "card-body"; // le pongo una clase
 
-      const breveDescripcionProducto = document.createElement("p"); // creo un parrafo p
-      breveDescripcionProducto.textContent = prodcuto.materiales; // 🚸le asigno materiales al parrafo, hay que reveer esto
+    const tituloProducto = document.createElement("h2"); // titulo del producto
+    tituloProducto.textContent = prodcuto.nombre;
 
-      const precioProducto = document.createElement("p")
-      precioProducto.textContent = "$" + prodcuto.precio
+    const breveDescripcionProducto = document.createElement("p"); // parrafito breve del detalle
+    breveDescripcionProducto.textContent = prodcuto.materiales;
 
+    const precioProducto = document.createElement("p"); // parrafo para el precio
+    precioProducto.textContent = "$" + prodcuto.precio;
 
-      const detalleProdcuto = document.createElement("a");
-      detalleProdcuto.textContent = "Detalle del producto";
-      detalleProdcuto.href = `producto.html?id=${prodcuto.id}`;
-      //aca lo que hago es agregar los "hijos" es decir los descendiente en el arbol del DOM
+    const detalleProdcuto = document.createElement("a"); // link al detalle
+    detalleProdcuto.textContent = "Detalle del producto";
+    detalleProdcuto.href = `producto.html?id=${prodcuto.id}`; // le paso el id para saber cual es
 
-      bodyProducto.appendChild(tituloProducto); // le agrego la al bodyProducto el titulo
-      bodyProducto.appendChild(breveDescripcionProducto); // le agrego la al bodyProducto la descripcionsita
-      bodyProducto.appendChild(precioProducto)
-      bodyProducto.appendChild(detalleProdcuto);
-      cardProducto.appendChild(imgProducto); //imagen es hijo de cardProducto, o sea que está dentro de ese div
-      cardProducto.appendChild(bodyProducto); // este es el div que contiene el titulo, la descripsionsita y el enlace "ver detalle"
-      gridProducto.appendChild(cardProducto); // Le agrego al gridProducto todo lo anterior, porque este es el que va a contener toda la estructura, porqeu es la tarjetita principal y esto se va a repetir para todos los otros productos
-    }
-  } catch (err) {
-    console.error("Error al cargar productos:", err);
-    contenedorProducto.innerHTML =
-      "<p>Ocurrió un error al cargar el producto.</p>";
+    // ahora voy armando el arbol del DOM,  o sea le voy diciendo que etiqueta esta dentro de quien
+    bodyProducto.appendChild(tituloProducto);
+    bodyProducto.appendChild(breveDescripcionProducto);
+    bodyProducto.appendChild(precioProducto);
+    bodyProducto.appendChild(detalleProdcuto);
+    cardProducto.appendChild(imgProducto);
+    cardProducto.appendChild(bodyProducto);
+    gridProducto.appendChild(cardProducto); // y al final meto la tarjeta completa en el grid, para rendierizar en el HTML
   }
 }
+
+//  aca cargo todos los productos del json apenas abre la pag
+async function cargarTodosLosProductos() {
+  try {
+    const respuesta = await fetch("../json/catalogo_hermanos_jota.json"); // me traigo el archivo json
+    if (!respuesta.ok) throw new Error(`HTTP ${respuesta.status}`); // si falla tiro error
+
+    productos = await respuesta.json(); // guardo todos los productos en la variable global
+    renderizarProductos(productos); // dibujo todo apenas carga
+  } catch (err) {
+    console.error("Error al cargar productos:", err);
+    gridProducto.innerHTML =
+      "<p>Ocurrió un error al cargar el catálogo.</p>"; // si falla pongo msjito
+  }
+}
+
 cargarTodosLosProductos();
 
-// >>>>>>>>>>>>>>>>>>>>>>>>> Codigo de Mili <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+// >>>>>>>>>>>>>>>>>>>>>>>>> la parte de la busqueda <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+const cuadroDeBusqueda = document.getElementById("cuadroDeBusqueda"); // agarro el input del buscador
 
+cuadroDeBusqueda.addEventListener("input", (e) => { // escucho cuando alguien escribe
+  const texto = e.target.value.toLowerCase(); // paso todo a minusculas par comparar
+
+  // filtro los productos q tengan el texto en el nombre o en los materiales
+  const filtrados = productos.filter((p) =>
+    p.nombre.toLowerCase().includes(texto) ||
+    p.materiales.toLowerCase().includes(texto)
+  );
+
+  renderizarProductos(filtrados); // muestro los q pasaron el filtro
+});
