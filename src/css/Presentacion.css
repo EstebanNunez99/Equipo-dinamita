@@ -140,6 +140,8 @@
   }
 }
 
+
+
 @media screen and (max-width: 480px) {
   .presentacion-left h1 {
     font-size: 2.2rem;
@@ -151,9 +153,16 @@
 
   .collage {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 12px;
+    max-width: 90%;
   }
 
-  .collage-item.vertical {
-    grid-column: 1;
+  .collage-item.grande, 
+  .collage-item.vertical, 
+  .collage-item.cuadrado {
+    grid-column: auto;
+    grid-row: auto;
   }
+
 }
