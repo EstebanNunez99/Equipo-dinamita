@@ -1,50 +1,4 @@
-// const contendorProducto = document.getElementById("contenedor-producto")
-// const iamgenDelProducto = document.getElementById("imagen-del-producto")
-
-// const idProducto = 1
-
-
-// async function traerProductos() {
-
-//     try {
-//         const respuesta  = await fetch("../json/catalogo_hermanos_jota.json") //traigo el archivo json
-//         if (!respuesta.ok) throw new Error("Error al cargar el JSON"); //sino hay repuesta del json se muestra un error
-    
-//         const productos = await respuesta.json() // convierto el json en un arreglo llamado productos 
-        
-//         const productoDelJSON = productos.find(idProducto)
-
-//         iamgenDelProducto.src = productoDelJSON.imagen
-
-//         contendorProducto.appendChild(iamgenDelProducto)
-    
-//     }
-
-
-//     catch (error) {
-//     console.error("Error al cargar cursos:", error);
-//     const msg = document.createElement("p");
-//     msg.textContent = "No se pudieron cargar los cursos 😢";
-//     courseList.appendChild(msg);
-//   }
-// }
-
-// traerProductos() vamo de nuevo de cerito acá
-
-
-const contenedorProducto = document.getElementById("contenedor-producto");
-const imagenDelProducto = document.getElementById("imagen-del-producto");
-const nombrePagina = document.getElementById("nombre-de-la-pagina")
-
-const nombre = document.querySelector(".nombre-producto");
-const descripcion= document.querySelector(".descripcion-producto");
-const precio = document.querySelector(".precio");
-const descripcionTexto = document.querySelector(".descripcion-texto p");
-const caracteristicasTds = document.querySelectorAll(".caracteristicas-prodcuto tbody tr td");
-const caracteristicasThs = document.querySelectorAll(".caracteristicas-prodcuto thead tr th");
-
-const idProducto = 1;
-
+const gridProducto = document.querySelector("grid-productos")
 
 async function cargarProducto() {
 
@@ -53,16 +7,29 @@ async function cargarProducto() {
         const respuesta = await fetch("../json/catalogo_hermanos_jota.json"); // trgo el archivo JSON
         if (!respuesta.ok) throw new Error(`HTTP ${respuesta.status}`);
 
-        
         const productos = await respuesta.json(); // convierto el json a array de objetos que se llama productos
         
-        const producto = productos.find(p => p.id === idProducto); // busco con find el producto en el arrelo de productos
+        for (const prodcuto of productos) {
+            const cardProducto = document.createElement("div")
+            cardProducto.className = "card-producto"
+            
+            const imgProducto = document.createElement("img")
+            imgProducto.src = prodcuto.imagen
+            imgProducto.alt = prodcuto.nombre
 
-        
-        if (!producto) { // si no existe, mostramos mensaje y salimos
-          contenedorProducto.innerHTML = "<p>Producto no encontrado</p>";
-          return;
+            const bodyProducto = document.createElement("div")
+            bodyProducto.className = "card-body"
+
+            const tituloProducto = document.createElement("h2")
+            tituloProducto.textContent = prodcuto.nombre
+
+
+            const breveDescripcionProducto = document.createElement("p")
+            breveDescripcionProducto.textContent = prodcuto.materiales
+
+            cardProducto.app
         }
+        
 
         //cargo la parte del contenedor del producto
         nombrePagina.textContent = "Producto | " + producto.nombre // le pongo nombresito a la pag :D
@@ -118,5 +85,3 @@ async function cargarProducto() {
       }
     }
     cargarProducto();
-
-
