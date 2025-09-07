@@ -74,7 +74,7 @@ async function cargarProducto() {
     imagenDelProducto.src = encodeURI(producto.imagen); // cargo la imagen
     imagenDelProducto.alt = producto.nombre || "Producto";
     nombre.textContent = producto.nombre || "";
-    descripcion.textContent = producto.descripcion || "";
+  
     descripcionTexto.textContent = producto.descripcion || "";
     precio.textContent = `$${producto.precio.toLocaleString()}` || "";
 
