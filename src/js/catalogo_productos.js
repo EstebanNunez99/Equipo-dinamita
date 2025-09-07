@@ -51,7 +51,6 @@ function renderCatalogo(lista) {
 contenedor.appendChild(card);
     });
 
-    // 👉 Listener para "Agregar"
     document.querySelectorAll(".btn-agregar").forEach(btn => {
         btn.addEventListener("click", (e) => {
             e.preventDefault();
@@ -60,7 +59,6 @@ contenedor.appendChild(card);
         });
     });
 
-    // 👉 Listener para "Detalles"
     document.querySelectorAll(".btn-detalles").forEach(btn => {
         btn.addEventListener("click", (e) => {
             e.preventDefault();
