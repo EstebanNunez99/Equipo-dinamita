@@ -116,79 +116,6 @@ main {
   width: 100%;
 }
 
-
-
-@media screen and (max-width: 900px) {
-  .contenedor-producto {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .imagen-producto,
-  .producto {
-    width: 100%;
-    flex: none;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .producto {
-    padding: 20px;
-  }
-
-  .nombre-producto {
-    font-size: 2.5rem;
-  }
-
-  .descripcion-producto {
-    font-size: 1.1rem;
-  }
-
-  .precio {
-    font-size: 2rem;
-  }
-
-  .precio-y-carrito {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .precio-y-carrito button {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .precio-y-carrito button img {
-    width: 24px;
-    height: 24px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .contenedor-producto {
-    padding: 0 5vw;
-  }
-
-  .producto {
-    padding: 15px;
-  }
-
-  .nombre-producto {
-    font-size: 2rem;
-  }
-
-  .descripcion-producto {
-    font-size: 1rem;
-  }
-
-  .precio {
-    font-size: 1.8rem;
-  }
-}
-
-
 /* Tabla de características */
 .caracteristicas-prodcuto {
   margin-top: 40px;
@@ -200,110 +127,27 @@ main {
   color: #333;
 }
 
-.caracteristicas-prodcuto h2 {
+.caracteristicas-prodcuto table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+.caracteristicas-prodcuto caption {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 15px;
   color: #a0522d;
 }
 
-/* Contenedor de las características */
-.caracteristicas-lista {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Crea dos columnas de igual tamaño */
-  gap: 10px 50px;
-}
-
-/* Estilo de cada par de característica */
-.caracteristica-item {
-  /* display: flex;
-  justify-content: space-between;
-  padding: 8px 0;
-  border-bottom: 1px solid #ddd; */
-
-  display: block;
-  padding: 8px 0;
+.caracteristicas-prodcuto th,
+.caracteristicas-prodcuto td {
+  padding: 12px;
   border-bottom: 1px solid #ddd;
 }
 
-/* Estilo para el nombre de la característica */
-.caracteristica-item strong {
+.caracteristicas-prodcuto thead th {
+  background-color: #fff;
   color: #a0522d;
   font-weight: bold;
-}
-
-/* Estilo para el valor de la característica */
-.caracteristica-item span {
-  text-align: right;
-}
-
-/* Mantenemos tus media queries anteriores para el resto de la página */
-@media screen and (max-width: 900px) {
-  .contenedor-producto {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .imagen-producto,
-  .producto {
-    width: 100%;
-    flex: none;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .producto {
-    padding: 20px;
-  }
-
-  .nombre-producto {
-    font-size: 2.5rem;
-  }
-
-  .descripcion-producto {
-    font-size: 1.1rem;
-  }
-
-  .precio {
-    font-size: 2rem;
-  }
-
-  .precio-y-carrito {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .precio-y-carrito button {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .precio-y-carrito button img {
-    width: 24px;
-    height: 24px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .contenedor-producto {
-    padding: 0 5vw;
-  }
-
-  .producto {
-    padding: 15px;
-  }
-
-  .nombre-producto {
-    font-size: 2rem;
-  }
-
-  .descripcion-producto {
-    font-size: 1rem;
-  }
-
-  .precio {
-    font-size: 1.8rem;
-  }
 }
