@@ -2,13 +2,14 @@
 # **N° Grupo: 12 - Nombre del Grupo: Equipo dinamita**
 
 ## 📌 Integrantes
--González Lourdes
--Martinez Federico Agustin
--Nuñez Esteban
--Puebla Máximo Nahuel
--Valdéz Milagros
+### González Lourdes
+### Martinez Federico Agustin
+### Nuñez Esteban
+### Puebla Máximo Nahuel
+### Valdéz Milagros Ruth Elizabeth
 
-
+## Visitá nuestro proyecto en el siguiente link
+https://estebannunez99.github.io/Equipo-dinamita/src/page/index.html
 
 ## 📝 Descripción del proyecto
 Este proyecto consiste en el desarrollo de un **catálogo de productos dinámico para la web**.  
