@@ -1,18 +1,21 @@
-/* Fondo general */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #F5E6D3;
-  line-height: 1.6;
+    background: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Caja principal */
 main {
+  padding-top: 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 80px;
+  height: 90vh;
 }
 
 /* Formulario */
@@ -27,6 +30,7 @@ form {
 /* Titulo principal */
 h1 {
   font-family: 'Playfair Display', Georgia, serif;
+  color: #A0522D;
   text-transform: uppercase;
   text-align: left;
   letter-spacing: 0.1em;
@@ -37,7 +41,7 @@ h1 {
 /* Labels */
 label {
   text-align: left;
-  margin-bottom: 2px;
+  margin-bottom: -5px;
   font-weight: 500;
   font-size: 14px;
   padding-left: 5px;
@@ -77,6 +81,7 @@ button {
   letter-spacing: 0.08em;
   margin: 0 auto;
   display: block;
+  margin-top: 40px;
 }
 
 button:hover {

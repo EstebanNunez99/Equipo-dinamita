@@ -58,3 +58,19 @@ document.addEventListener("DOMContentLoaded", () => {
     form.reset();
   });
 });
+
+
+document.addEventListener("click", (e) => {
+  const carritoMenu = document.querySelector(".carrito-menu");
+  const iconoCarrito = e.target.closest(".carrito");
+  const clicDentroDelMenu = e.target.closest(".carrito-menu");
+  const esBotonEliminar = e.target.classList.contains("eliminar-producto");
+
+  if (!carritoMenu) return;
+
+  if (iconoCarrito) {
+    carritoMenu.classList.add("mostrar");
+  } else if (!clicDentroDelMenu && !esBotonEliminar) {
+    carritoMenu.classList.remove("mostrar");
+  }
+});

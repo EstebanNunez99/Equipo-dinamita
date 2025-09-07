@@ -30,19 +30,25 @@
             </nav>
         </div>
         <div class="header-right">
-            <div class="search">
-                <img src="../img/search.svg" alt="search">
-                <input type="text" placeholder="Buscar productos" id="cuadroDeBusqueda">
-            </div>
+    
             <div class="carrito">
-                <img src="../img/carrito.svg" alt="Carrito" class="carrito">
+                <img src="../img/carrito.svg" alt="Carrito">
                 <span class="cart-count">0</span>
             </div>
+            <div class="carrito-menu"></div>
         </div>
     </header>
 
     <main class="catalogo-main">
         <h1 class="titulo-catalogo">Catálogo de Productos</h1>
+
+
+         <div class="catalogo-search">
+    <div class="search">
+        <img src="../img/search.svg" alt="search">
+        <input type="text" placeholder="Buscar productos..." id="cuadroDeBusqueda">
+    </div>
+</div>
 
         <!--plantilla para cargar todos los productos-->
         <div class="grid-productos">
@@ -107,7 +113,8 @@
     </footer>
 
     <script src="../js/catalogo_productos.js"></script>
-
+    <script src=".../js/producto.js"></script>
+    <script src="../js/carrito.js"></script>
 </body>
 
 </html>

@@ -30,7 +30,7 @@ function renderizarProductos(lista) {
     breveDescripcionProducto.textContent = prodcuto.materiales;
 
     const precioProducto = document.createElement("p"); // parrafo para el precio
-    precioProducto.textContent = "$" + prodcuto.precio;
+   precioProducto.textContent = `$${prodcuto.precio.toLocaleString()}`;
 
     const detalleProdcuto = document.createElement("a"); // link al detalle
     detalleProdcuto.textContent = "Detalle del producto";
@@ -80,4 +80,20 @@ cuadroDeBusqueda.addEventListener("input", (e) => {
   );
 
   renderizarProductos(filtrados); // muestro los q pasaron el filtro
+});
+
+
+document.addEventListener("click", (e) => {
+  const carritoMenu = document.querySelector(".carrito-menu");
+  const iconoCarrito = e.target.closest(".carrito");
+  const clicDentroDelMenu = e.target.closest(".carrito-menu");
+  const esBotonEliminar = e.target.classList.contains("eliminar-producto");
+
+  if (!carritoMenu) return;
+
+  if (iconoCarrito) {
+    carritoMenu.classList.add("mostrar");
+  } else if (!clicDentroDelMenu && !esBotonEliminar) {
+    carritoMenu.classList.remove("mostrar");
+  }
 });
