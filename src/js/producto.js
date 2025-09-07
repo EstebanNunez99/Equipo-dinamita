@@ -43,8 +43,6 @@ const descripcionTexto = document.querySelector(".descripcion-texto p");
 const caracteristicasTds = document.querySelectorAll(".caracteristicas-prodcuto tbody tr td");
 const caracteristicasThs = document.querySelectorAll(".caracteristicas-prodcuto thead tr th");
 
-const idProducto = 1;
-
 
 async function cargarProducto() {
 
@@ -56,9 +54,15 @@ async function cargarProducto() {
         
         const productos = await respuesta.json(); // convierto el json a array de objetos que se llama productos
         
-        const producto = productos.find(p => p.id === idProducto); // busco con find el producto en el arrelo de productos
+        // Obtiene la parte de la URL con los parámetros
+        const urlParams = new URLSearchParams(window.location.search);
+        // Extrae el valor del parámetro 'id'
+        const idProducto = urlParams.get('id');
 
-        
+        const producto = productos.find(p => p.id == idProducto); // busco con find el producto en el arrelo de productos
+
+        console.log(typeof(producto))
+
         if (!producto) { // si no existe, mostramos mensaje y salimos
           contenedorProducto.innerHTML = "<p>Producto no encontrado</p>";
           return;
