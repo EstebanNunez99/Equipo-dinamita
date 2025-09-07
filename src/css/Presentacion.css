@@ -151,16 +151,9 @@
 
   .collage {
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 12px;
-    max-width: 90%;
   }
 
-  .collage-item.grande, 
-  .collage-item.vertical, 
-  .collage-item.cuadrado {
-    grid-column: auto;
-    grid-row: auto;
+  .collage-item.vertical {
+    grid-column: 1;
   }
-
 }
