@@ -29,7 +29,7 @@
 //   }
 // }
 
-// traerProductos() vamo de nuevo de cerito acá lo anterior era un ejemplo de la prof
+// traerProductos() vamo de nuevo de cerito acá
 
 
 const contenedorProducto = document.getElementById("contenedor-producto");
@@ -122,3 +122,31 @@ async function cargarProducto() {
       }
     }
     cargarProducto();
+
+
+// la parte del carrito
+const botonAnadirCarrito = document.querySelector(".aniadir-carrito");
+const contadorCarrito = document.querySelector(".cart-count");
+
+
+function actualizarContadorCarrito() { // función que lee el total de productos y lo pone en el HTML
+
+  const totalItems = parseInt(localStorage.getItem("carritoCount")) || 0;   // Traemos el número del localStorage, si no hay nada, arrancamos en cero
+  
+  contadorCarrito.textContent = totalItems; // con este le cambio el numerito al contador en la página
+}
+
+
+function anadirAlCarrito() {
+  
+  const totalItems = parseInt(localStorage.getItem("carritoCount")) || 0;
+  const nuevoTotal = totalItems + 1; //si se hizo clcl incremento el cont
+  
+  localStorage.setItem("carritoCount", nuevoTotal); // Guardamos el nuevo número para que no se borre si cambiás de página
+  
+  actualizarContadorCarrito(); // renderizo el nuevo resultado, actulizo el carrito nms
+}
+
+botonAnadirCarrito.addEventListener("click", anadirAlCarrito); //que escuche el clcik
+
+actualizarContadorCarrito(); // llamada a la funcion que casi me olvido de llamarla por 5ta vezzz

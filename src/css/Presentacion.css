@@ -1,14 +1,11 @@
-
-
 .presentacion {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 60px 5vw 40px 5vw;
   min-height: 100vh;
-  background: white;
+  background: #f5e6d3; /* Fondo beige cálido */
   font-family: Arial, Helvetica, sans-serif;
-
 }
 
 .presentacion-left {
@@ -21,7 +18,7 @@
 
 .presentacion-left h1 {
   font-size: 5rem;
-  color: #a0522d;
+  color: #a0522d; /* Marrón cálido */
   margin-bottom: 10px;
   font-family: 'Playfair Display', serif;
 }
@@ -29,7 +26,7 @@
 .descripcion {
   font-size: 1.05rem;
   padding-top: 20px;
- color: #222;
+  color: #333; /* Texto oscuro para contraste */
 }
 
 .presentacion-right {
@@ -39,7 +36,7 @@
   align-items: center;
 }
 
-/* Collage de presentación en el main */
+/* Collage */
 .collage {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -50,7 +47,7 @@
 }
 
 .collage-item {
-  background: #F5E6D3;
+  background: #b3694d; /* Marrón rojizo (igual a productos destacados) */
   border-radius: 12px;
   overflow: hidden;
   position: relative;
@@ -59,7 +56,6 @@
   justify-content: center;
   min-width: 0;
   min-height: 0;
-  
 }
 
 .collage-item img {
@@ -67,14 +63,15 @@
   height: 100%;
   object-fit: contain;
   display: block;
-  transition: transform 0.3s cubic-bezier(.4,1.5,.5,1); /* transición suave */
+  transition: transform 0.3s cubic-bezier(.4,1.5,.5,1);
 }
 
 .collage-item:hover img {
   transform: scale(1.08);
   z-index: 2;
 }
-/* Tamaños personalizados para cada item */
+
+/* Tamaños */
 .collage-item.grande {
   grid-column: 1 / 2;
   grid-row: 1 / 2;

@@ -11,52 +11,16 @@ body{
 }
 
 header {
-    background-color: #F5E6D3;  
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+    position: sticky;
+    top:0;
+    z-index: 100;
+    background-color: #F5E6D3;
 }
 
-.header-left {
+.header-right {
     display: flex;
     align-items: center;
-    gap: 30px; 
-}
-
-nav{
-    display: flex;
-    align-items: center;
-    width: auto;
-}
-ul{
-    display: flex;
-    justify-content: space-around;
-    padding: auto;
-    margin: auto;
-    gap: 30px;
-    list-style: none;
-}
-
-.carrito-header {
-    width: 32px;
-    height: auto;
-    cursor: pointer;
-    margin-right: 40px;
-
-}
-
-.logo{
-    width: 80px;
-    height: auto;
-    display: block;
-    justify-content: start;
-    padding: 10px;
-    margin-left: 50px;
+    gap: 20px; 
 }
 
 .search {
@@ -196,11 +160,4 @@ nav ul li a.active {
 
 .card-body a:hover{
     background-color: #F5E6D3;
-}
-
-.card-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;   
-    margin-top: 10px; 
 }
