@@ -11,7 +11,8 @@ function renderizarProductos(lista) {
     return;
   }
 
-  for (const prodcuto of lista) { // recorro cada producto del array
+  for (const prodcuto of lista) {
+    // recorro cada producto del array
     const cardProducto = document.createElement("div"); // creo el div principal (la tarjetita)
     cardProducto.className = "card-producto";
 
@@ -53,11 +54,11 @@ async function cargarTodosLosProductos() {
     if (!respuesta.ok) throw new Error(`HTTP ${respuesta.status}`); // si falla tiro error
 
     productos = await respuesta.json(); // guardo todos los productos en la variable global
+    console.log(productos);
     renderizarProductos(productos); // dibujo todo apenas carga
   } catch (err) {
     console.error("Error al cargar productos:", err);
-    gridProducto.innerHTML =
-      "<p>Ocurrió un error al cargar el catálogo.</p>"; // si falla pongo msjito
+    gridProducto.innerHTML = "<p>Ocurrió un error al cargar el catálogo.</p>"; // si falla pongo msjito
   }
 }
 
@@ -66,13 +67,16 @@ cargarTodosLosProductos();
 // >>>>>>>>>>>>>>>>>>>>>>>>> la parte de la busqueda <<<<<<<<<<<<<<<<<<<<<<<<<<<<
 const cuadroDeBusqueda = document.getElementById("cuadroDeBusqueda"); // agarro el input del buscador
 
-cuadroDeBusqueda.addEventListener("input", (e) => { // escucho cuando alguien escribe
+cuadroDeBusqueda.addEventListener("input", (e) => {
+  // escucho cuando alguien escribe
   const texto = e.target.value.toLowerCase(); // paso todo a minusculas par comparar
 
   // filtro los productos q tengan el texto en el nombre o en los materiales
-  const filtrados = productos.filter((p) =>
-    p.nombre.toLowerCase().includes(texto) ||
-    p.materiales.toLowerCase().includes(texto)
+
+  const filtrados = productos.filter(
+    (p) =>
+      (p.nombre || "").toLowerCase().includes(texto) ||
+      (p.materiales || "").toLowerCase().includes(texto)
   );
 
   renderizarProductos(filtrados); // muestro los q pasaron el filtro
