@@ -151,3 +151,131 @@ main {
   color: #a0522d;
   font-weight: bold;
 }
+@media (max-width: 768px) {
+  .contenedor-producto {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .imagen-producto,
+  .producto {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .nombre-producto {
+    font-size: 2.2rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .descripcion-producto,
+  .descripcion-texto,
+  .precio,
+  .opciones-pago {
+    text-align: center;
+    width: 100%;
+  }
+
+  /* 👉 Precio + carrito juntos solo en responsive */
+  .precio-y-carrito {
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 12px;
+  }
+
+  .precio {
+    font-size: 2rem;
+  }
+
+  .precio-y-carrito button {
+    border-radius: 50%;
+    padding: 8px;
+  }
+
+  .caracteristicas-prodcuto {
+    padding: 15px;
+  }
+
+  .caracteristicas-prodcuto caption {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+     display: block;
+  text-align: center;
+
+  }
+
+  .caracteristicas-prodcuto table {
+    font-size: 0.95rem;
+  }
+}@media (max-width: 600px) {
+  .caracteristicas-prodcuto table,
+  .caracteristicas-prodcuto thead,
+  .caracteristicas-prodcuto tbody,
+  .caracteristicas-prodcuto th,
+  .caracteristicas-prodcuto td,
+  .caracteristicas-prodcuto tr {
+    display: block;
+    width: 100%;
+  }
+
+  .caracteristicas-prodcuto thead {
+    display: none; /* Ocultamos encabezados */
+  }
+
+  .caracteristicas-prodcuto tbody {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .caracteristicas-prodcuto tr {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  }
+
+  .caracteristicas-prodcuto td {
+    border: none;
+    padding: 6px 0;
+    text-align: left;
+    position: relative;
+    font-size: 0.95rem;
+  }
+
+  .caracteristicas-prodcuto td::before {
+    content: attr(data-label) ": ";
+    font-weight: bold;
+    color: #a0522d;
+    display: inline; /* 👈 ahora va en línea con el valor */
+    margin-right: 4px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  main {
+    padding: 30px 4vw 25px 4vw;
+  }
+
+  .nombre-producto {
+    font-size: 1.8rem;
+  }
+
+  .precio {
+    font-size: 1.6rem;
+  }
+
+  .precio-y-carrito {
+    gap: 8px;
+  }
+
+  .precio-y-carrito button img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
